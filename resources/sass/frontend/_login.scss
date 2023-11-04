@@ -1,0 +1,106 @@
+/* ==========================================================================           
+ *
+ *    LOGIN PAGE
+ *
+ * ========================================================================== */
+.social-logins-box {
+   display: flex;
+   gap: 1rem!important;
+   flex-wrap: wrap!important;
+
+   .social-login-button {
+      flex-grow: 1;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 12px;
+      padding: 10px 5px;
+      transition: .3s;
+      display: flex;
+      width: calc(50% - 0.5rem);
+      align-items: center;
+      justify-content: center;
+
+      &:hover, &:focus {
+         border-color: $primaryTextColor!important;
+         background-color: $primaryTextColor;
+         color: #FFF!important;
+         box-shadow: 0 1px 3px rgba(33, 33, 33, 0.5) !important;
+      }
+   }
+}
+
+#login-google {
+   color: #DB4437;
+   border: 1px solid #DB4437;
+}
+
+#login-facebook {
+   color: #4267B2;
+   border: 1px solid #4267B2;
+}
+
+#login-twitter {
+   color: #1DA1F2;
+   border: 1px solid #1DA1F2;
+}
+
+#login-linkedin {
+   color: #0e76a8;
+   border: 1px solid #0e76a8;
+}
+
+.login-title {
+   font-weight: 800;
+   text-shadow: 1px 1px 2px rgba(40, 40, 40, 0.2);
+}
+
+.login-main-button {
+   width: 50%;
+   font-size: 14px!important;
+   text-transform: none!important;
+}
+
+#login-footer {
+   bottom: 0;
+   left: 32.5%;
+}
+
+.invalid-feedback {
+   font-size: 10px!important;
+   color: #ff3547!important;
+}
+
+#login-background {
+   background-position: center;
+   vertical-align: middle;
+   width: 100vw;
+   height: 100vh;
+
+   .login-bg {
+      background: linear-gradient(230deg, #007bff, #000);
+      background-size: 300% 300%;
+      animation: login-gradient 30s ease infinite;
+      height: 100vh;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+@-webkit-keyframes login-gradient {
+   0%{background-position:0% 50%}
+   50%{background-position:100% 50%}
+   100%{background-position:0% 50%}
+}
+@-moz-keyframes login-gradient {
+   0%{background-position:0% 50%}
+   50%{background-position:100% 50%}
+   100%{background-position:0% 50%}
+}
+@keyframes login-gradient {
+   0%{background-position:0% 50%}
+   50%{background-position:100% 50%}
+   100%{background-position:0% 50%}
+}
