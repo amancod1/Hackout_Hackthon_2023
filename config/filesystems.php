@@ -34,14 +34,31 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
             'throw' => false,
+            'visibility' => 'public',
+        ],
+
+        'db_backup' => [
+            'driver' => 'local',
+            'root' => storage_path('app/backup'),
+        ],
+
+        'root' => [
+            'driver' => 'local',
+            'root' => base_path('/'),
+        ],
+
+        'audio' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/storage',
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
         ],
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'root' => public_path(),
+            'url' => env('APP_URL').'/public',
             'visibility' => 'public',
-            'throw' => false,
         ],
 
         's3' => [
@@ -54,7 +71,21 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
+            'visibility' => 'public',
+            'options' => ['ContentDisposition' => 'attachment'],
         ],
+
+        'wasabi' => [
+            'driver' => 's3',
+            'key' => env('WASABI_ACCESS_KEY_ID'),
+            'secret' => env('WASABI_SECRET_ACCESS_KEY'),
+            'region' => env('WASABI_DEFAULT_REGION'),
+            'bucket' => env('WASABI_BUCKET'),
+            'endpoint' => 'https://s3.' . env('WASABI_DEFAULT_REGION') . '.wasabisys.com',
+            'visibility' => 'public',
+            'options' => ['ContentDisposition' => 'attachment'],
+        ],
+
 
     ],
 
@@ -70,7 +101,7 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        public_path('app/images') => storage_path('app/images'),
     ],
 
 ];

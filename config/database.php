@@ -57,10 +57,15 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
-            'engine' => null,
+            'engine' => 'InnoDB',
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
+            'dump' => [
+                'dump_binary_path' => '/usr/bin/', 
+                'use_single_transaction',
+                'timeout' => 60 * 5, 
+            ],
         ],
 
         'pgsql' => [

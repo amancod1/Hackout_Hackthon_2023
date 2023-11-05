@@ -11,7 +11,14 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array<int, string>
      */
-    protected $except = [
-        //
+    protected $except = [ 
+        'webhooks/*',
+        'user/payments/approved/razorpay',        
+        'user/payments/subscription/razorpay',  
+        'user/payments/approved/braintree', 
+        'public/install/*',    
+        'install/*',
+        'user/payments/approved',
+        'user/payments/approved/paddle',
     ];
 }
