@@ -85,6 +85,13 @@ Now open .env.example file in file manager and add the following details:- APP_U
 Finally Import .sql content into phymyadmin of cpanel
 
 Boom!! Now you can open your Project with credentials user@gmail.com and user@gmail.com
+
+## Declartions
+- Used Pre Trained Models from Hugging Face ( Lack of GPU Resources)
+- Resuable Components from Material UI
+- Laravel Boilerplate
+
+- 
 ### Contributors
 - Aman Gupta 
 - Shashank Kumar
