@@ -91,7 +91,6 @@ Boom!! Now you can open your Project with credentials user@gmail.com and user@gm
 - Resuable Components from Material UI
 - Laravel Boilerplate
 
-- 
 ### Contributors
 - Aman Gupta 
 - Shashank Kumar
