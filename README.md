@@ -1,66 +1,95 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![](./logo.gif)
+# TravelGenie - Generative AI 
+A Generative AI Powered Platform for Travel App & Publishing Industry.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+# [Visit Deployed Site Here](https://hackout.teamcode.tech/)  
+UserID: user@gmail.com 
+Password: user@gmail.com    |   AdminID: admin@gmail.com
+Password: admin@gmail.com
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Problem it Solves
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Planning of  travel and preparation of travel iteniary with detailed nuances.
+- Giving essential summary and assisting the user with Generative AI Chatbots.
+- Empowering publising and creator space for travel domain by proving all type of content generation for blogs, videos with copyright free assets.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### AI Feature of Travel.Genie
+- Summarization, PDf chat with Langchain, Curated guide from Generative AI.
+- Create templates and generate content from fine tuned LLMs for specific domain.
+- Get transcipt for Youtube Video with maximum accuracy.
+- Speech Syntesis with Human tones.
+- Royalty free high quatilty image generation with positive and negative prompting
+- create User Profile, with subscription plans
+- And many more
+### Basic Features
+- Book rentals, flights, tour packages.
+- Explore various categories of Hotels, Places and destinations.
+- Search and get the curated results of places based on ratings, price aggregator.
+- Apply various filters to get desired result.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### PoC UI [ Travel.Genie Creator Web App + Travel App] 
+<pre>
+<img src="./1.png" alt="1"  /><img src="./2.png" alt="1"  /><img src="./3.png" alt="1"  /><img src="./4.png" alt="1"  />
+</pre>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<pre>
 
-## Laravel Sponsors
+<img src="./ui.png" alt="1"  /><img src="./ui.png" alt="1"  />
+</pre>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Technology Used
+- React, Javascript
+- HTML CSS Bootstrap
+- PHP Laravel Blade
+- MySQL Firebase 
+- Azure Voice, Wishper
+- SST TTS, GCP
+- Gradio OpenAI API
+- Stable Diffusion Dall-E
+- Hugging Face API
 
-### Premium Partners
+## Challenges we faced
+- Creating engaing UI for Travel.Genie
+- Using Fine tuned custom LLM models
+- Prompt engineering to control responses
+- Integrating multimodal features to one platform
+- Database Desgin to handle all assets
+- Providing enterprise features of shared workspace
+- Gathering the data of categories as such hotels, restaurants, dineouts, beachers, etc.
+- Building the database for co-ordinates(latitude and Longitude) of the places.
+- Fetching reviews and ratings.
+- Plaing the searching parameters.
+- integrating multiple 3rd party services like maps, booking sites was the trickiest part.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Proposed Enhancements
+- Creating pipeline between vendor app and Travel.Genie AI.
+- integrating ride booking.
+- Live in-app events.
+- Support for connecting chain on institutions.
 
-## Contributing
+## Installation of Project
+Prerequisite
+PHP v8.1,PHP Mbstring Extension,PHP PDO Extension,PHP FileInfo Extension,PHP JSON Extension,PHP CURL Extension,PHP ZipArchive Extension,PHP symlink() function,PHP shell_exec() function,PHP file_get_contents() function
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Setup Wamp or Xampp Server in case of Windows or LAMP Server in case of Linux or MAMP in case of Mac, Here I have used Cpanel beacause it is easy to setup in cpanel.
 
-## Code of Conduct
+Zip and upload only the contents of github Project to the root directory of your hosting server. Ex: /var/www/html/ or /home/username/public_html or whatever is the root folder of your domain/subdomain which will make it reachable as follows: http://yourwebsitename/ like in my case https://hackout.teamcode.tech
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+After uploading all files and making sure that domain name has proper path set, create Mysql database and proper user in case if you don't already have one, to access this database. You can either create manually via your phpMyAdmin panel or use phpMyAdmin Wizard in your cPanel to create one
 
-## Security Vulnerabilities
+Now open .env.example file in file manager and add the following details:- APP_URL= APP_EMAIL= DB_CONNECTION=mysql DB_HOST=localhost DB_PORT=3306 DB_DATABASE= DB_USERNAME= DB_PASSWORD= OPENAI_SECRET_KEY= Chatgpt api key finalyy change .env.example to .env and then save.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Finally Import .sql content into phymyadmin of cpanel
 
-## License
+Boom!! Now you can open your Project with credentials user@gmail.com and user@gmail.com
+### Contributors
+- Aman Gupta 
+- Shashank Kumar
+- Prakhar Singh
+- Prarthana Agrawal
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Built with ❤️ by Team C.O.D.E <br>
+At Hackout 2023, DTU
