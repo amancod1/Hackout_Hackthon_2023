@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Admin\LicenseController;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Promocode;
@@ -13,10 +12,7 @@ class FinancePromocodeController extends Controller
 {
     private $api;
 
-    public function __construct()
-    {
-        $this->api = new LicenseController();
-    }
+
 
     /**
      * Display a listing of the resource.
@@ -25,13 +21,13 @@ class FinancePromocodeController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         if ($request->ajax()) {
-            $data = Promocode::all();          
+            $data = Promocode::all();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('actions', function($row){
-                        $actionBtn = '<div>                                            
+                        $actionBtn = '<div>
                                         <a href="'. route("admin.finance.promocodes.show", $row["id"] ). '"><i class="fa-solid fa-file-invoice-dollar table-action-buttons edit-action-button" title="View Promocode"></i></a>
                                         <a href="'. route("admin.finance.promocodes.edit", $row["id"] ). '"><i class="fa-solid fa-file-pen table-action-buttons view-action-button" title="Update Promocode"></i></a>
                                         <a data-toggle="modal" id="deleteSubscriptionButton" data-target="#deleteModal" href="" data-attr="'. route("admin.finance.promocodes.delete", $row["id"] ). '"><i class="fa-solid fa-trash-xmark table-action-buttons delete-action-button" title="Delete Promocode"></i></a>
@@ -65,7 +61,7 @@ class FinancePromocodeController extends Controller
                     })
                     ->rawColumns(['actions', 'custom-status', 'custom-code', 'name', 'type', 'discount'])
                     ->make(true);
-                    
+
         }
 
         return view('admin.finance.promocodes.index');
@@ -78,7 +74,7 @@ class FinancePromocodeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         return view('admin.finance.promocodes.create');
     }
 
@@ -116,8 +112,8 @@ class FinancePromocodeController extends Controller
         //     ],
         //     $expires_in = $expires_in_days,
         //     $quantity = $total_quantity,
-        //     $is_disposable = request('usage'),            
-        // ); 
+        //     $is_disposable = request('usage'),
+        // );
 
         // Promocode::create(
         //     $multi_use = 0,
@@ -132,22 +128,22 @@ class FinancePromocodeController extends Controller
         //     ],
         //     $expires_in = $expires_in_days,
         //     $quantity = $total_quantity,
-        //     $is_disposable = request('usage'),            
-        // ); 
+        //     $is_disposable = request('usage'),
+        // );
 
         createPromocodes(
-            multiUse: request('multi_use'), 
-            count: 1, 
-            usages: $total_quantity, 
-            expiration:  $valid_until, 
-            details: [ 
+            multiUse: request('multi_use'),
+            count: 1,
+            usages: $total_quantity,
+            expiration:  $valid_until,
+            details: [
                 'name' => request('promo-name'),
                 'discount' => request('discount'),
                 'status' => request('status'),
                 'type' => request('promo-type'),
-            ] 
+            ]
         );
-                         
+
         toastr()->success(__('New promocode has been created successfully'));
         return redirect()->route('admin.finance.promocodes');
     }
@@ -160,7 +156,7 @@ class FinancePromocodeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Promocode $id)
-    {   
+    {
         $data = json_decode($id->details);
 
         return view('admin.finance.promocodes.show', compact('id', 'data'));
@@ -203,7 +199,7 @@ class FinancePromocodeController extends Controller
             'name' => request('promo-name'),
             'status' => request('status'),
             'discount' => request('discount'),
-            'type' => request('promo-type'),            
+            'type' => request('promo-type'),
         ];
 
         $quantity =  request('quantity');
@@ -219,7 +215,7 @@ class FinancePromocodeController extends Controller
         return redirect()->route('admin.finance.promocodes');
     }
 
-    
+
     /**
      * Remove the specified resource from storage.
      *
@@ -233,16 +229,16 @@ class FinancePromocodeController extends Controller
         if($promocode) {
             $promocode->delete();
         }
-    
+
         toastr()->success(__('Selected promocode was deleted successfully'));
-        return redirect()->route('admin.finance.promocodes');          
+        return redirect()->route('admin.finance.promocodes');
     }
 
 
     public function delete($id)
-    {   
+    {
         $promocode = Promocode::where('id', $id)->firstOrFail();
 
-        return view('admin.finance.promocodes.delete', compact('promocode'));  
+        return view('admin.finance.promocodes.delete', compact('promocode'));
     }
 }
